@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+$base-color: theme('colors.purple.500');
+input {
+  &[type="text"] {
+    &:focus {
+      @apply ring-purple-500;
+      @apply text-purple-500;
+      @apply border-purple-500;
+    }
+  }
+}*/
+
+html *, body *, #app {
+  @apply transition-colors duration-700;
+}
+
+@font-face {
+  font-family: 'Poneglyph Regular';
+  src: url('@/assets/fonts/Poneglyph.ttf') format('truetype');
+}
+
+// fadein keyframe sass
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
