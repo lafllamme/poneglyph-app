@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import {computed, watch} from "vue";
+import {computed, ref} from "vue";
 import {useFontStore} from "@/stores/useFont.store";
-import {storeToRefs} from 'pinia'
 
 interface Props {
   id: string;
   name: string;
   required: boolean;
-  value?: string;
   cols?: number;
   rows?: number;
+  value?: string;
   autofocus?: boolean;
   autocomplete?: boolean;
   spellcheck?: boolean;
@@ -23,8 +22,12 @@ interface Props {
   form?: string;
 }
 
+interface Emits {
+  (event: 'update:modelValue', value: string): boolean
+}
+
 const props = withDefaults(defineProps<Props>(), {
-  autofocus: true,
+  autofocus: false,
   autocomplete: true,
   cols: 8,
   rows: 20,
@@ -33,24 +36,24 @@ const props = withDefaults(defineProps<Props>(), {
   minlength: 10,
   maxlength: 500,
   label: "label",
-  placeholder: "placeholder",
+  placeholder: "Hello World ...",
   readonly: false,
   wrap: 'soft'
 
 });
+const  { validateFontText, setFontText } = useFontStore();
 
 const hasAutoComplete = computed(() => props.autocomplete ? "on" : "off");
+//const emits = defineEmits<Emits>()
+const text = ref<string>('');
 
 
-const {fontText} = storeToRefs(useFontStore());
-
-watch((hasAutoComplete), (newValue: string, oldValue: string) => {
-  console.log(`hasAutoComplete changed from ${oldValue} to ${newValue}`);
-});
-
-const handleKeyUp = (e: Event) => {
-  console.log(e);
+const handleInput = (e: Event) => {
+  const textArea = e.target as HTMLTextAreaElement;
+  textArea.value = validateFontText(textArea.value);
+  setFontText(textArea.value);
 }
+
 </script>
 <template>
   <slot name="label">
@@ -73,8 +76,8 @@ const handleKeyUp = (e: Event) => {
       :readonly="readonly"
       :wrap="wrap"
       :class="$attrs.class"
-      @keyup="handleKeyUp"
-      v-model="fontText"
+      @input="handleInput"
+      v-model="text"
   >
       </textarea>
 </template>
