@@ -9,18 +9,19 @@
 </template>
 <script setup lang="ts">
 import {computed, ref} from "vue";
-import LightmodeIcon from "./icons/LightmodeIcon.vue";
-import DarkmodeIcon from "./icons/DarkmodeIcon.vue";
+
+import LightModeIcon from "./icons/LightModeIcon.vue";
+import DarkModeIcon from "./icons/DarkModeIcon.vue";
 
 const toggleDarkMode = ref<boolean>(false);
 const toggleLightMode = ref<boolean>(false);
 
 // eslint-disable-next-line vue/return-in-computed-property
-const themeIcon = computed(() => {
+const themeIcon = computed<any>(() => {
   if (toggleDarkMode.value) {
-    return DarkmodeIcon;
+    return DarkModeIcon;
   } else if (toggleLightMode.value) {
-    return LightmodeIcon;
+    return LightModeIcon;
   }
 });
 
