@@ -1,6 +1,13 @@
 {
   "name": "poneglyph-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A poneglyph translater application.",
+  "maintainers": [
+    {
+      "name": "Dogan Teke",
+      "email": ""
+    }
+  ],
   "private": true,
   "scripts": {
     "dev": "vite",
