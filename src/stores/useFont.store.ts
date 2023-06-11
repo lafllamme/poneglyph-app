@@ -11,7 +11,7 @@ export const useFontStore = defineStore('font', () => {
     const getFontText = computed(() => fontText.value);
 
     const validateFontText = ((text: string) => {
-        return text.replace(/[^a-zA-Z0-9\s]/g, '');
+        return text.replace(/[^a-zA-Z0-9\s.,]/g, '');
     })
 
 
