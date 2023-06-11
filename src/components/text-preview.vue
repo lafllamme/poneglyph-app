@@ -33,7 +33,7 @@ watch(fontSizeClass, (newVal) => {
           id="text-preview"
           rows="6"
           :class="fontSizeClass"
-          class="text-center text-gray-900 dark:text-white block py-4 px-3 w-full bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="text-left text-gray-900 dark:text-white block py-4 px-3 w-full bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       />
   </div>
 </template>
