@@ -3,6 +3,7 @@ import TextArea from "@/components/patterns/text-area.vue";
 import IconAttachment from "@/components/icons/IconAttachment.vue";
 import {useFontStore} from "@/stores/useFont.store";
 import {storeToRefs} from "pinia";
+import SliderRange from "@/components/patterns/slider-range.vue";
 
 const {fontText} = storeToRefs(useFontStore());
 
@@ -14,6 +15,7 @@ const {fontText} = storeToRefs(useFontStore());
     <div
         class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
       <div class="flex items-center justify-between px-3 py-2 border-b dark:border-gray-600">
+
         <div class="flex flex-wrap items-center divide-gray-200 sm:divide-x dark:divide-gray-600">
           <div class="flex items-center space-x-1 sm:pr-4">
             <button type="button"
@@ -139,4 +141,6 @@ const {fontText} = storeToRefs(useFontStore());
 
 
 </template>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>
