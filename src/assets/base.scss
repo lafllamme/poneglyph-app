@@ -14,7 +14,7 @@ input {
   }
 }*/
 
-html *, body *, #app {
+html *, body *, #app * {
   @apply transition-colors duration-700;
 }
 
