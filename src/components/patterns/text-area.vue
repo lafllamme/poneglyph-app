@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {withDefaults, computed, watch} from "vue";
+import {computed, watch} from "vue";
 import {useFontStore} from "@/stores/useFont.store";
-import { storeToRefs } from 'pinia'
+import {storeToRefs} from 'pinia'
 
 interface Props {
   id: string;
@@ -57,25 +57,25 @@ const handleKeyUp = (e: Event) => {
     <label :for="id" class="sr-only">{{ label }}</label><br>
   </slot>
 
-   <textarea
-        :id="id"
-        :name="name"
-        :required="required"
-        :autocomplete="hasAutoComplete"
-        :autofocus="autofocus"
-        :spellcheck="spellcheck"
-        :cols="cols"
-        :rows="rows"
-        :disabled="disabled"
-        :maxlength="maxlength"
-        :minlength="minlength"
-        :placeholder="placeholder"
-        :readonly="readonly"
-        :wrap="wrap"
-        :class="$attrs.class"
-        @keyup="handleKeyUp"
-        v-model="fontText"
-        >
+  <textarea
+      :id="id"
+      :name="name"
+      :required="required"
+      :autocomplete="hasAutoComplete"
+      :autofocus="autofocus"
+      :spellcheck="spellcheck"
+      :cols="cols"
+      :rows="rows"
+      :disabled="disabled"
+      :maxlength="maxlength"
+      :minlength="minlength"
+      :placeholder="placeholder"
+      :readonly="readonly"
+      :wrap="wrap"
+      :class="$attrs.class"
+      @keyup="handleKeyUp"
+      v-model="fontText"
+  >
       </textarea>
 </template>
 <style lang="scss" scoped>

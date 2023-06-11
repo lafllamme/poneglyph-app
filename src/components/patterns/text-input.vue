@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, withDefaults} from "vue";
+import {ref} from "vue";
 
 interface Props {
   id: string;
@@ -12,7 +12,7 @@ interface Props {
   description?: string;
 }
 
-const props = withDefaults(defineProps<Props>(), {
+ withDefaults(defineProps<Props>(), {
   type: "text",
   size: 45,
   pattern: "[a-z]{4,8}",
@@ -40,19 +40,19 @@ const validateInput = (e: Event): void => {
 }
 </script>
 <template>
-    <div>
-      <label :for="id">{{ label }} </label>
-      <input
-          @keyup="handleKeyUp"
-          :type="type"
-          :id="id"
-          :name="name"
-          :required="required"
-          :size="size"
-          :pattern="pattern"/>
-      <span ref="validityRef"></span>
-      <p>{{ description }}</p>
-    </div>
+  <div>
+    <label :for="id">{{ label }} </label>
+    <input
+        @keyup="handleKeyUp"
+        :type="type"
+        :id="id"
+        :name="name"
+        :required="required"
+        :size="size"
+        :pattern="pattern"/>
+    <span ref="validityRef"></span>
+    <p>{{ description }}</p>
+  </div>
 </template>
 
 <style lang="scss" scoped>
